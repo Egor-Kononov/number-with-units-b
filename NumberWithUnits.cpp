@@ -89,11 +89,11 @@ namespace ariel{
         this->val += value;
         return *this;
     }
-    NumberWithUnits NumberWithUnits::operator + (const NumberWithUnits& other){
+    NumberWithUnits NumberWithUnits::operator + (const NumberWithUnits& other)const{
         double value = conversion(this->unit,other.unit,other.val);
         return NumberWithUnits{this->val+value,this->unit};
     }
-    NumberWithUnits NumberWithUnits::operator + (){
+    NumberWithUnits NumberWithUnits::operator + ()const{
         return *this;
     }
     NumberWithUnits& NumberWithUnits::operator-=(const NumberWithUnits& other){
@@ -101,11 +101,11 @@ namespace ariel{
         this->val -= value;
         return *this;
     }
-    NumberWithUnits NumberWithUnits::operator - (const NumberWithUnits& other){
+    NumberWithUnits NumberWithUnits::operator - (const NumberWithUnits& other)const{
         double value = conversion(this->unit,other.unit,other.val);
         return NumberWithUnits{this->val-value,this->unit};
     }
-    NumberWithUnits NumberWithUnits::operator - (){
+    NumberWithUnits NumberWithUnits::operator - ()const{
         return NumberWithUnits {this->val*(-1) , this->unit};
     }
 
@@ -136,8 +136,7 @@ namespace ariel{
         return os << num.val << "[" << num.unit << "]";
     }
 
-    istream& operator>> (istream& is, NumberWithUnits& num)
-    {
+    istream& operator>> (istream& is, NumberWithUnits& num){
         char ch = ' ';
         char ch1 = ' ';
         string unit = " ";

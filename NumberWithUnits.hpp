@@ -28,10 +28,10 @@ namespace ariel{
 
         NumberWithUnits& operator+=(const NumberWithUnits& other);
         NumberWithUnits& operator-=(const NumberWithUnits& other);
-        NumberWithUnits operator + (const NumberWithUnits& other);
-        NumberWithUnits operator + ();
-        NumberWithUnits operator - (const NumberWithUnits& other);
-        NumberWithUnits operator - ();
+        NumberWithUnits operator + (const NumberWithUnits& other)const;
+        NumberWithUnits operator + ()const;
+        NumberWithUnits operator - (const NumberWithUnits& other)const;
+        NumberWithUnits operator - ()const;
 
 
         friend bool operator==(const NumberWithUnits& a, const NumberWithUnits& b);
